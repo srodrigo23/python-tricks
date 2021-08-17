@@ -1,4 +1,5 @@
 import math
+
 def esPrimo(n):
     nd = 0
     for i in range(2,int(math.sqrt(n))+1):

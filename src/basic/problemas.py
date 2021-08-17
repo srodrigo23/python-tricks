@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 num = input("Ingrese un numero" + "\n")
 
 #numero espejo
@@ -12,7 +10,6 @@ def invertir(n):
 		n = n / 10	
 	return nn
 
-#numero perfecto
 import math
 def perfecto(n):
 	sd = 1
