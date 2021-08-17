@@ -1,0 +1,18 @@
+
+
+""" 
+IMAGE NODE
+Contains all the attributes and methods of this imagenode
+
+One ImageNode is instantiated during the startup of the imagenode.py
+program. It takes the settings loaded from the YAML file and sets all
+the operational parameters of the imagenode, including the hub address that
+images and messages will be sent to, camera settings, sensors, etc. as
+attributes of the ImageNode.
+
+The ImageNode also contains all the methods to gather, process and send
+images, event detection messages and sensor data to the ImageHub.
+
+Parameters:
+    settings (Settings object): settings object created from YAML file
+"""

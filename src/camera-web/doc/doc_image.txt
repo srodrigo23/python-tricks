@@ -1,0 +1,86 @@
+Abrir un socket para enviar imagenes
+Se crea una nistancia de ZMQ con el protocolo (REQ or PUB) para enviar imagenes desde
+el dispositivo de captura de imágenes que en este caso es la raspberry pi
+el cual enviara imagenes y texto relativo a una computadora central.
+Provee metodos para enviar imagenes o enviar jpg imagenes compresas en formato jpg.
+
+Dos tipos de patrones de mensajes ZMQ son posibles:
+REQ/REP: una imagen es enviada y el remitente se queda a la espera de recibir un mensaje de conformacion("proceso bloqueado")
+PUB/SUB: una imagen es enviada y no se espera respuesta alguna("proceso no bloqeuado")
+
+hay ventajas y desventajas para cada patron de mensaje.
+el protocolo adoptado es el REQ/PED
+
+Argumentos:
+    conectar a : direccion tcp: puerto del servidor
+    REQ/REP : opcional si es verdad(por defecto)
+                se creara un socket con el protocolo REQ, 
+                si es falso, se creara PUB socket
+
+Serializacion del socket
+"""
+Numpy array serialization methods.
+
+Modelled on PyZMQ serialization examples.
+Used for sending / receiving OpenCV images, which are Numpy arrays.
+Also used for sending / receiving jpg compressed OpenCV images.
+"""
+
+"""
+    Sends a numpy array with metadata and text message.
+    Sends a numpy array with the metadata necessary for reconstructing
+    the array (dtype,shape). Also sends a text msg, often the array or
+    image name.
+
+    Arguments:
+        A: numpy array or OpenCV image.
+        msg: (optional) array name, image name or text message.
+        flags: (optional) zmq flags.
+        copy: (optional) zmq copy flag.
+        track: (optional) zmq track flag.
+    """
+
+
+
+"""
+    Send a jpg buffer with a text message.
+
+    Sends a jpg bytestring of an OpenCV image.
+    Also sends text msg, often the image name.
+    Arguments:
+        msg: image name or text message.
+        jpg_buffer: jpg buffer of compressed image to be sent.
+        flags: (optional) zmq flags.
+        copy: (optional) zmq copy flag.
+        track: (optional) zmq track flag.
+    """
+"""
+    Receives a numpy array with metadata and text message.
+
+    Receives a numpy array with the metadata necessary
+    for reconstructing the array (dtype,shape).
+    Returns the array and a text msg, often the array or image name.
+
+    Arguments:
+        flags: (optional) zmq flags.
+        copy: (optional) zmq copy flag.
+        track: (optional) zmq track flag.
+
+    Returns:
+        msg: image name or text message.
+        A: numpy array or OpenCV image reconstructed with dtype and shape.
+    """
+"""
+    Receives a jpg buffer and a text msg.
+    Receives a jpg bytestring of an OpenCV image.
+    Also receives a text msg, often the image name.
+
+    Arguments:
+        flags: (optional) zmq flags.
+        copy: (optional) zmq copy flag.
+        track: (optional) zmq track flag.
+
+    Returns:
+        msg: image name or text message.
+        jpg_buffer: bytestring, containing jpg image.
+    """

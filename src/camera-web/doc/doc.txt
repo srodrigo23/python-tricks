@@ -1,0 +1,24 @@
+image hub
+
+"""
+Opens a zmq socket and receives images
+
+Opens a zmq (REP or SUB) socket on the hub computer, for example,
+a Mac, that will be receiving and displaying or processing OpenCV images
+and related text messages. Provides methods to receive images or receive
+jpg compressed images.
+
+Two kinds of ZMQ message patterns are possible in imagezmq:
+REQ/REP: an image is sent and the sender waits for a reply ("blocking").
+PUB/SUB: an images is sent and no reply is sent or expected ("non-blocking").
+
+There are advantabes and disadvantages for each message pattern.
+See the documentation for a full description of REQ/REP and PUB/SUB.
+The default is REQ/REP for the ImageSender class and the ImageHub class.
+
+Arguments:
+    open_port: (optional) the socket to open for receiving REQ requests or 
+        socket to connect to for SUB requests.
+    REQ_REP: (optional) if True (the default), a REP socket will be created
+        if False, a SUB socket will be created
+"""

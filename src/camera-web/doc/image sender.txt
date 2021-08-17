@@ -1,0 +1,58 @@
+image sender
+documentation:
+
+""" This is a placeholder. This method will be set to either a REQ/REP
+		or PUB/SUB sending method, depending on REQ_REP option value.
+		Arguments:
+			msg: text message or image name.
+			image: OpenCV image to send to hub.
+		Returns:
+			A text reply from hub in REQ/REP mode or nothing in PUB/SUB mode.
+		"""
+
+"""
+    Sends OpenCV image and msg to hub computer in REQ/REP mode
+    Arguments:
+        msg: text message or image name.
+        image: OpenCV image to send to hub.
+    Returns:
+        A text reply from hub.
+"""
+
+"""
+    Sends OpenCV image and msg hub computer in PUB/SUB mode. If
+    there is no hub computer subscribed to this socket, then image and msg
+    are discarded.
+    Arguments:
+        msg: text message or image name.
+        image: OpenCV image to send to hub.
+    Returns:
+        Nothing; there is no reply from hub computer in PUB/SUB mode
+"""
+
+"""
+    This is a placeholder. This method will be set to either a REQ/REP
+    or PUB/SUB sending method, depending on REQ_REP option value.
+    Arguments:
+    msg: image name or message text.
+    jpg_buffer: bytestring containing the jpg image to send to hub.
+    Returns:
+    A text reply from hub in REQ/REP mode or nothing in PUB/SUB mode.
+"""
+
+"""Sends msg text and jpg buffer to hub computer in REQ/REP mode.
+		Arguments:
+			msg: image name or message text.
+			jpg_buffer: bytestring containing the jpg image to send to hub.
+		Returns:
+			A text reply from hub.
+		"""
+"""Sends msg text and jpg buffer to hub computer in PUB/SUB mode. If
+		there is no hub computer subscribed to this socket, then image and msg
+		are discarded.
+		Arguments:
+			msg: image name or message text.
+			jpg_buffer: bytestring containing the jpg image to send to hub.
+		Returns:
+			Nothing; there is no reply from the hub computer in PUB/SUB mode.
+		"""
