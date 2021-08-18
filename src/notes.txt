@@ -1,6 +1,5 @@
 image hub
 
-"""
 Opens a zmq socket and receives images
 
 Opens a zmq (REP or SUB) socket on the hub computer, for example,
