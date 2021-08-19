@@ -11,3 +11,4 @@ def is_palindrome(word: str) -> bool:
     return True
 
 print(f"apple: {is_palindrome('apple')}")
+print(f"apple: {is_palindrome('aaaabbaaaa')}")

@@ -20,7 +20,8 @@ def threaded_client(connection):
     connection.send(str.encode('Welcome to the Server'))
     while True:
         data = connection.recv(2048)
-        # msg = data.decode('utf-8')        
+        entry = data.decode('utf-8') 
+        print(entry)
         reply = 'Server says ' + data.decode('utf-8')
         if not data:
             break
@@ -34,5 +35,3 @@ while True:
     print(get_ident())
     ThreadCount += 1
     print('Thread Number: ' + str(ThreadCount))
-    
-    
