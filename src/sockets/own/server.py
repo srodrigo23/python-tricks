@@ -3,8 +3,7 @@ import socket as s
 import time
 
 class Server():
-    
-    def __init__(self, host='', port=8485):
+    def __init__(self, host='', port=1233):
         self.host=host
         self.port=port
         self.setup_server()
@@ -19,8 +18,8 @@ class Server():
         self.cons = [] # to manage conections
         self.listen_connections()
     
-    def start_new_connection(self, connection):
-        thread = Thread(target=self.listen_connections, args=(connection))
+    def start_new_connection(self, conn):
+        thread = Thread(target=self.run_connection, args=(conn, ))
         thread.setDaemon(True)
         thread.start()
     
@@ -40,6 +39,7 @@ class Server():
         print("Listen connections >")
         while True:
             conn, addr = self.socket.accept()
+            self.start_new_connection(conn)
             self.cons.append((conn, addr))    
             self.show_server_info()
     
@@ -47,4 +47,5 @@ class Server():
         print(f'Num. conections : { len(self.cons) }')
         for con in self.cons:
             print(f"Connection : {con[1][0]} Address : {con[1][1]}" )
+
 Server()
