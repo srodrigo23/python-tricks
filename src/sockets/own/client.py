@@ -10,7 +10,7 @@ class Client():
         self.host=host
         self.port=port
         self.connect_server()
-        self.run_connection()
+        self.run_listen_messages()
     
     def connect_server(self):
         print('Looking for a connection...')
@@ -27,7 +27,7 @@ class Client():
         thread.setDaemon(True)
         thread.start()
     
-    def run_send_messages(self):
+    # def run_send_messages(self):
         
 
     def run_listen_messages(self):

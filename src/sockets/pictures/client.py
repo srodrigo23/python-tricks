@@ -1,21 +1,16 @@
 import cv2, imutils, io, socket, struct, time, pickle
 import numpy as np
 
-
-client_socket = socket.socket(socket.AF_INET, 
-                              socket.SOCK_STREAM)
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 client_socket.connect(('127.0.0.1', 8485))
-while True:
-    client_socket.sendall()
 
-
-abs_source = '/Users/sergiorodrigo/Documents/tesis/test/withoulibs/media/video3.mp4'
+abs_source = '/Users/sergiorodrigo/Documents/tesis/test/media/video5.mp4'
 cam = cv2.VideoCapture(abs_source)
 img_counter = 0
 time.sleep(2.0)
 
-to encode jpeg image format
+# to encode jpeg image format
 encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), 90]
 
 while True:

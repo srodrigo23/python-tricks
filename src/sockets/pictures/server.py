@@ -19,23 +19,16 @@ print('Socket bind complete')
 s.listen(10)
 print('Socket now listening')
 
-while True:    
-    conn, addr = s.accept()
-    print(addr)
-    data = b""
-    payload_size = struct.calcsize(">L")
-    print("payload_size: {}".format(payload_size))
-    
-    while True:
-            data = conn.recv(1024)
-            if not data:
-                break
-            conn.sendall(data)
+conn, addr = s.accept()
+print(addr)
+data = b""
+payload_size = struct.calcsize(">L")
+print("payload_size: {}".format(payload_size))
 
-while True:
+while True:    
     while len(data) < payload_size:
         data += conn.recv(4096)
-        
+    
     # receive image row data form client socket
     packed_msg_size = data[:payload_size]
     data = data[payload_size:]
