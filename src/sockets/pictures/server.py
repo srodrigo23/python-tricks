@@ -25,7 +25,8 @@ data = b""
 payload_size = struct.calcsize(">L")
 print("payload_size: {}".format(payload_size))
 
-while True:    
+while True:
+    
     while len(data) < payload_size:
         data += conn.recv(4096)
     
@@ -34,7 +35,7 @@ while True:
     data = data[payload_size:]
     
     msg_size = struct.unpack(">L", packed_msg_size)[0]
-    
+    print(f'len-data {len(data)} msg_size {msg_size}')
     while len(data) < msg_size:
         data += conn.recv(4096)
         
