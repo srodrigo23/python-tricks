@@ -87,7 +87,8 @@ class ControlFrame(ttk.LabelFrame):
             text='C to F',
             value=1,
             variable=self.selected_value,
-            command=self.change_frame).grid(column=1, row=0, padx=5, pady=5)
+            command=self.
+            ).grid(column=1, row=0, padx=5, pady=5)
 
         self.grid(column=0, row=1, padx=5, pady=5, sticky='ew')
 

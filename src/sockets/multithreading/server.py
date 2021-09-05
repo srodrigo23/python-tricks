@@ -8,7 +8,6 @@ port = 1233
 ThreadCount = 0
 
 #where is this example?
-
 try:
     ServerSocket.bind((host, port))
 except socket.error as e:
