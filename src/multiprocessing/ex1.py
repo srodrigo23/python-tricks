@@ -2,6 +2,10 @@
 from multiprocessing import Process
 import time
 
+#somee examples are prensted in ths page : 
+# https://www.pyimagesearch.com/2019/09/09/multiprocessing-with-opencv-and-python/
+# this serie of examples are showed in : https://www.journaldev.com/15631/python-multiprocessing-example
+
 def print_func(continent='Asia'):
     time.sleep(5.0)
     print('The name of continent is : ', continent)
