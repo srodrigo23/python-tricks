@@ -1,3 +1,7 @@
+
+# https://programming.vip/docs/python-3-standard-library-selectors-i-o-multiplex-abstraction.html
+
+# https://docs.python.org/3/library/selectors.html
 import selectors
 import socket
 

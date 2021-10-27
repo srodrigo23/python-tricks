@@ -1,6 +1,6 @@
 import socket
 import os
-from _thread import *
+from _thread import start_new_thread
 
 ServerSocket = socket.socket()
 host = '127.0.0.1'
@@ -15,7 +15,7 @@ except socket.error as e:
 
 print('Waiting for a Connection')
 
-ServerSocket.listen(5)
+ServerSocket.listen(1)
 
 def threaded_client(connection):
     connection.send(str.encode('Welcome to the Server'))

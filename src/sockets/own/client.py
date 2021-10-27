@@ -28,7 +28,6 @@ class Client():
         thread.start()
     
     # def run_send_messages(self):
-        
 
     def run_listen_messages(self):
         while True:    
